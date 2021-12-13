@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>21 Savage Fans</title>
+  <script src="https://kit.fontawesome.com/8ea013bdc7.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <h1>21 Savage</h1>
+  <h2>Why you trappin so hard?</h2>
+
+
+  <h3>Messages</h3>
+  <ul>
+    <% message.forEach( el => { %>
+    <li class="messageItem" data-id='<%=el._id%>'>
+      <span class="message"><%= el.name %></span>
+      <span class="message"><%= el.message %></span>
+      <span class="message"><%= el.thumbsUp %></span>
+      <span class="upvote"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+      <span class="downvote"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+      <span class="del"><i class="fa fa-trash"></i></span>
+    </li>
+    <% }) %>  
+  </ul>
+
+  <h2>Add a message</h2>
+
+  <form action="/messages" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="message" name="message">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
